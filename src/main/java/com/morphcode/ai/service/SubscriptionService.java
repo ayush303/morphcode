@@ -1,14 +1,23 @@
 package com.morphcode.ai.service;
 
-import com.morphcode.ai.dto.subscription.CheckoutRequest;
-import com.morphcode.ai.dto.subscription.CheckoutResponse;
-import com.morphcode.ai.dto.subscription.PortalResponse;
+import java.time.Instant;
+
 import com.morphcode.ai.dto.subscription.SubscriptionResponse;
+import com.morphcode.ai.enums.SubscriptionStatus;
 
 public interface SubscriptionService {
-    SubscriptionResponse getCurrentSubscription(Long userId);
+    SubscriptionResponse getCurrentSubscription();
 
-    CheckoutResponse createCheckoutSessionUrl(CheckoutRequest request, Long userId);
+    void activateSubscription(Long userId, Long planId, String subscriptionId, String customerId);
 
-    PortalResponse openCustomerPortal(Long userId);
+    void updateSubscription(String gatewaySubscriptionId, SubscriptionStatus status, Instant periodStart,
+            Instant periodEnd, Boolean cancelAtPeriodEnd, Long planId);
+
+    void cancelSubscription(String gatewaySubscriptionId);
+
+    void renewSubscriptionPeriod(String subId, Instant periodStart, Instant periodEnd);
+
+    void markSubscriptionPastDue(String subId);
+
+    boolean canCreateNewProject();
 }

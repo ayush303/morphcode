@@ -1,14 +1,15 @@
 package com.morphcode.ai.entity;
 
-import lombok.AccessLevel;
+import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.experimental.FieldDefaults;
 
+@Embeddable
 @Getter
 @Setter
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@NoArgsConstructor
 @AllArgsConstructor
 public class ProjectMemberId {
     Long projectId;

@@ -1,24 +1,39 @@
 package com.morphcode.ai.entity;
 
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
 import java.time.Instant;
 
 import com.morphcode.ai.enums.ProjectRole;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.FieldDefaults;
-
-@Setter
 @Getter
-@AllArgsConstructor
+@Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Table(name = "project_members")
 public class ProjectMember {
+
+    @EmbeddedId
     ProjectMemberId id;
-    User user;
+
+    @ManyToOne
+    @MapsId("projectId")
     Project project;
-    ProjectRole role;
+
+    @ManyToOne
+    @MapsId("userId")
+    User user;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    ProjectRole projectRole;
+
     Instant invitedAt;
     Instant acceptedAt;
+
 }
