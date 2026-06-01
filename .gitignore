@@ -32,8 +32,9 @@ build/
 ### VS Code ###
 .vscode/
 
-### Secrets - never commit real application.properties ###
+### Secrets - never commit these ###
 src/main/resources/application.properties
+.env
 
 ### Build artifacts and local tooling ###
 graphify-out/
