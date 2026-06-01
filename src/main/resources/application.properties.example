@@ -1,0 +1,37 @@
+spring.application.name=MorphCode
+spring.application.description=MorphCode is a Spring Boot-based code generation that morphs to your intentions, providing a seamless and efficient way to generate code based on your specifications.
+spring.application.version=1.0.0
+
+server.port=8082
+
+spring.datasource.url=jdbc:postgresql://localhost:9010/pgvector-test
+spring.datasource.username=user
+spring.datasource.password=password
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.format_sql=true
+
+# OpenRouter API key (https://openrouter.ai/keys)
+spring.ai.openai.api-key=${OPENROUTER_API_KEY}
+spring.ai.openai.base-url=https://openrouter.ai/api
+spring.ai.openai.chat.options.model=google/gemini-3-flash-preview
+spring.ai.openai.chat.options.temperature=0.0
+
+# Generate with: openssl rand -base64 64
+jwt.secret-key=${JWT_SECRET_KEY}
+
+# Stripe keys (https://dashboard.stripe.com/apikeys)
+stripe.api.secret=${STRIPE_API_SECRET}
+stripe.webhook.secret=${STRIPE_WEBHOOK_SECRET}
+
+client.url=http://localhost:8080
+
+logging.level.org.springframework.ai.chat.client=DEBUG
+
+minio.url=http://localhost:9000
+minio.access-key=minioadmin
+minio.secret-key=minioadmin123
+minio.project-bucket=projects

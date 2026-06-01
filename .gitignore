@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Secrets - never commit real application.properties ###
+src/main/resources/application.properties
+
+### Build artifacts and local tooling ###
+graphify-out/
+.DS_Store
