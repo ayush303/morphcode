@@ -1,0 +1,577 @@
+{
+  "/Users/ayushpandey/Documents/morphcode/mvnw": {
+    "mtime": 1779603409.0,
+    "ast_hash": "ab50dd89da7da2346b28003352eeeeeb",
+    "semantic_hash": "ab50dd89da7da2346b28003352eeeeeb"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/MorphcodeApplication.java": {
+    "mtime": 1779615111.440467,
+    "ast_hash": "6d6698cda63caf8228a7687e9033105f",
+    "semantic_hash": "6d6698cda63caf8228a7687e9033105f"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/config/AiConfig.java": {
+    "mtime": 1780322363.8320465,
+    "ast_hash": "1e2716d6ae03027c0e484bc9a2a99151",
+    "semantic_hash": "1e2716d6ae03027c0e484bc9a2a99151"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/config/CorsConfig.java": {
+    "mtime": 1780322391.6547909,
+    "ast_hash": "dabac0ba4fc972b010f84a925f9a5e11",
+    "semantic_hash": "dabac0ba4fc972b010f84a925f9a5e11"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/config/PaymentConfig.java": {
+    "mtime": 1780322418.3082352,
+    "ast_hash": "2231fa7c67dd71d1ab39aa11cd763aec",
+    "semantic_hash": "2231fa7c67dd71d1ab39aa11cd763aec"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/config/StorageConfig.java": {
+    "mtime": 1780322438.252641,
+    "ast_hash": "de466da10758fd7b75e49e0811f4bd0c",
+    "semantic_hash": "de466da10758fd7b75e49e0811f4bd0c"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/controller/AuthController.java": {
+    "mtime": 1780326884.5563486,
+    "ast_hash": "a6f21b7501dffcc430087d8e4861be7a",
+    "semantic_hash": "a6f21b7501dffcc430087d8e4861be7a"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/controller/BillingController.java": {
+    "mtime": 1780326931.0657346,
+    "ast_hash": "b43e8755ddf52f357f69ef2639125de8",
+    "semantic_hash": "b43e8755ddf52f357f69ef2639125de8"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/controller/ChatController.java": {
+    "mtime": 1780326953.3168256,
+    "ast_hash": "0b7b730ab640562b171252b68749c022",
+    "semantic_hash": "0b7b730ab640562b171252b68749c022"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/controller/FileController.java": {
+    "mtime": 1780326972.4392862,
+    "ast_hash": "86f75162822933e95623b5fbb3dd1c3b",
+    "semantic_hash": "86f75162822933e95623b5fbb3dd1c3b"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/controller/ProjectController.java": {
+    "mtime": 1780326992.5643675,
+    "ast_hash": "e89a2df2190983f65e8f91c86c8d26e4",
+    "semantic_hash": "e89a2df2190983f65e8f91c86c8d26e4"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/controller/ProjectMemberController.java": {
+    "mtime": 1780327008.5710952,
+    "ast_hash": "b2967defcd71fc38700e2434a36a09f3",
+    "semantic_hash": "b2967defcd71fc38700e2434a36a09f3"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/controller/UsageController.java": {
+    "mtime": 1780327028.2814445,
+    "ast_hash": "4b9e455fcd247569c2a2edddbcfcd66b",
+    "semantic_hash": "4b9e455fcd247569c2a2edddbcfcd66b"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/auth/AuthResponse.java": {
+    "mtime": 1779606806.0487144,
+    "ast_hash": "ec70a3d985e243b261df703c3eddf222",
+    "semantic_hash": "ec70a3d985e243b261df703c3eddf222"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/auth/LoginRequest.java": {
+    "mtime": 1780324596.7041974,
+    "ast_hash": "0dcb9144fe3c75268d0e774c1b549a8e",
+    "semantic_hash": "0dcb9144fe3c75268d0e774c1b549a8e"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/auth/SignupRequest.java": {
+    "mtime": 1780324615.5337784,
+    "ast_hash": "0823f39da5fb105afbf9336d8f652e1a",
+    "semantic_hash": "0823f39da5fb105afbf9336d8f652e1a"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/auth/UserProfileResponse.java": {
+    "mtime": 1779606870.9343889,
+    "ast_hash": "3e1e633a925556a0ea05fdb33b3c5912",
+    "semantic_hash": "3e1e633a925556a0ea05fdb33b3c5912"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/chat/ChatEventResponse.java": {
+    "mtime": 1780322565.9406173,
+    "ast_hash": "52620c2f120ffceb4027141e27af102a",
+    "semantic_hash": "52620c2f120ffceb4027141e27af102a"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/chat/ChatRequest.java": {
+    "mtime": 1780322510.740324,
+    "ast_hash": "7856c645c634fb6d32f4826213e28add",
+    "semantic_hash": "7856c645c634fb6d32f4826213e28add"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/chat/ChatResponse.java": {
+    "mtime": 1780322550.3866835,
+    "ast_hash": "6ed2ab277e06cbd483ca77bfbe368f82",
+    "semantic_hash": "6ed2ab277e06cbd483ca77bfbe368f82"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/chat/StreamResponse.java": {
+    "mtime": 1780322548.958406,
+    "ast_hash": "73d292d0829577e836748adc52c0a1f7",
+    "semantic_hash": "73d292d0829577e836748adc52c0a1f7"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/member/InviteMemberRequest.java": {
+    "mtime": 1780324653.562419,
+    "ast_hash": "15578eb190ae5d595bb50385f06d3b7b",
+    "semantic_hash": "15578eb190ae5d595bb50385f06d3b7b"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/member/MemberResponse.java": {
+    "mtime": 1779608725.0529387,
+    "ast_hash": "8ad9d4d318b4f224d39bfd12797c5a45",
+    "semantic_hash": "8ad9d4d318b4f224d39bfd12797c5a45"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/member/UpdateMemberRoleRequest.java": {
+    "mtime": 1780324674.3490505,
+    "ast_hash": "f8bbb8a15f89b03f7f7fb40510e38deb",
+    "semantic_hash": "f8bbb8a15f89b03f7f7fb40510e38deb"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/project/FileContentResponse.java": {
+    "mtime": 1779608622.4182596,
+    "ast_hash": "4ed782f39d78d5db71bd47b5d4d49888",
+    "semantic_hash": "4ed782f39d78d5db71bd47b5d4d49888"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/project/FileNode.java": {
+    "mtime": 1779608647.5936275,
+    "ast_hash": "c731bc770cfc964877a47a3014ed91b7",
+    "semantic_hash": "c731bc770cfc964877a47a3014ed91b7"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/project/FileTreeResponse.java": {
+    "mtime": 1780324329.314443,
+    "ast_hash": "8add4724e6bc10dc099ebdbb3ebf1a3f",
+    "semantic_hash": "8add4724e6bc10dc099ebdbb3ebf1a3f"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/project/ProjectRequest.java": {
+    "mtime": 1780324703.8635683,
+    "ast_hash": "51b6fa0e05c76feb8ddd682521990c45",
+    "semantic_hash": "51b6fa0e05c76feb8ddd682521990c45"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/project/ProjectResponse.java": {
+    "mtime": 1779607842.0028481,
+    "ast_hash": "cad7876f5859ceff51fc312a8af0b47e",
+    "semantic_hash": "cad7876f5859ceff51fc312a8af0b47e"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/project/ProjectSummaryResponse.java": {
+    "mtime": 1780326596.897922,
+    "ast_hash": "d7a46f63d58797196055fa2c97fb18f8",
+    "semantic_hash": "d7a46f63d58797196055fa2c97fb18f8"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/subscription/CheckoutRequest.java": {
+    "mtime": 1779608911.52682,
+    "ast_hash": "be9dd84d7a072869693442a5bcb68d67",
+    "semantic_hash": "be9dd84d7a072869693442a5bcb68d67"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/subscription/CheckoutResponse.java": {
+    "mtime": 1779608884.2954044,
+    "ast_hash": "0ecc43f9d15424647f53fd6c2f56b49a",
+    "semantic_hash": "0ecc43f9d15424647f53fd6c2f56b49a"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/subscription/PlanLimitsResponse.java": {
+    "mtime": 1779608852.6829162,
+    "ast_hash": "d043dbdba09b57a8c8b1fd98cbbfc1bc",
+    "semantic_hash": "d043dbdba09b57a8c8b1fd98cbbfc1bc"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/subscription/PlanResponse.java": {
+    "mtime": 1779608820.8462496,
+    "ast_hash": "f084b2b1dc8cb5deb7c9e92ccdf0f93e",
+    "semantic_hash": "f084b2b1dc8cb5deb7c9e92ccdf0f93e"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/subscription/PortalResponse.java": {
+    "mtime": 1779608943.4623795,
+    "ast_hash": "18e401f02604f1bc0fa12572a1613daa",
+    "semantic_hash": "18e401f02604f1bc0fa12572a1613daa"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/subscription/SubscriptionResponse.java": {
+    "mtime": 1779608823.2979958,
+    "ast_hash": "37d171458b0dd77cd70cd95b536b085b",
+    "semantic_hash": "37d171458b0dd77cd70cd95b536b085b"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/dto/subscription/UsageTodayResponse.java": {
+    "mtime": 1779608967.1654356,
+    "ast_hash": "27497789a52cce1c09c7f908faa8e455",
+    "semantic_hash": "27497789a52cce1c09c7f908faa8e455"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/entity/ChatEvent.java": {
+    "mtime": 1780322641.339448,
+    "ast_hash": "91ce47f510880a8e08796d9083679fe1",
+    "semantic_hash": "91ce47f510880a8e08796d9083679fe1"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/entity/ChatMessage.java": {
+    "mtime": 1780325008.769011,
+    "ast_hash": "add449b9ccf4cdb691db5c1c9e45f22c",
+    "semantic_hash": "add449b9ccf4cdb691db5c1c9e45f22c"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/entity/ChatSession.java": {
+    "mtime": 1780325035.822611,
+    "ast_hash": "9597d5430603160f7baf29e1bbab4e33",
+    "semantic_hash": "9597d5430603160f7baf29e1bbab4e33"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/entity/ChatSessionId.java": {
+    "mtime": 1780322683.7188318,
+    "ast_hash": "fa75cded8e4ce8898629a98a00a8a30a",
+    "semantic_hash": "fa75cded8e4ce8898629a98a00a8a30a"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/entity/Plan.java": {
+    "mtime": 1780325059.385344,
+    "ast_hash": "67a8e7cb1127620d31bd6b28dc4471d7",
+    "semantic_hash": "67a8e7cb1127620d31bd6b28dc4471d7"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/entity/Preview.java": {
+    "mtime": 1779605278.5217867,
+    "ast_hash": "7fe8c2d2167037b331388cf46eed9691",
+    "semantic_hash": "7fe8c2d2167037b331388cf46eed9691"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/entity/Project.java": {
+    "mtime": 1780325103.1071482,
+    "ast_hash": "972dc3ad383bed841677c1afbd79d1fe",
+    "semantic_hash": "972dc3ad383bed841677c1afbd79d1fe"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/entity/ProjectFile.java": {
+    "mtime": 1780325117.2015882,
+    "ast_hash": "3d5cd6fa0fca7b3a7d5a0c4eea130670",
+    "semantic_hash": "3d5cd6fa0fca7b3a7d5a0c4eea130670"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/entity/ProjectMember.java": {
+    "mtime": 1780325137.0893261,
+    "ast_hash": "f5f36b8fa841d5c502b5023cb9d129a3",
+    "semantic_hash": "f5f36b8fa841d5c502b5023cb9d129a3"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/entity/ProjectMemberId.java": {
+    "mtime": 1780325157.5713446,
+    "ast_hash": "bf0e5b58d995d6000e70d38461172a35",
+    "semantic_hash": "bf0e5b58d995d6000e70d38461172a35"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/entity/Subscription.java": {
+    "mtime": 1780325178.8946373,
+    "ast_hash": "722048e0892fd3a1ff9c9679e661368a",
+    "semantic_hash": "722048e0892fd3a1ff9c9679e661368a"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/entity/UsageLog.java": {
+    "mtime": 1780324976.8822832,
+    "ast_hash": "b606b91638cadaf2481ad5147a5a20b5",
+    "semantic_hash": "b606b91638cadaf2481ad5147a5a20b5"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/entity/User.java": {
+    "mtime": 1780327273.0034087,
+    "ast_hash": "c816413b991943f1b5054d55f1574369",
+    "semantic_hash": "c816413b991943f1b5054d55f1574369"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/enums/ChatEventType.java": {
+    "mtime": 1780321880.3437443,
+    "ast_hash": "8de6e1fada6ff91cae863c79343fd01f",
+    "semantic_hash": "8de6e1fada6ff91cae863c79343fd01f"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/enums/MessageRole.java": {
+    "mtime": 1779605522.4253635,
+    "ast_hash": "dba2051fa2e6badf2c158905a78b6138",
+    "semantic_hash": "dba2051fa2e6badf2c158905a78b6138"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/enums/PreviewStatus.java": {
+    "mtime": 1779605267.4691994,
+    "ast_hash": "bfd00c22b8fd4e3ffa9dd83ab4b5750c",
+    "semantic_hash": "bfd00c22b8fd4e3ffa9dd83ab4b5750c"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/enums/ProjectPermission.java": {
+    "mtime": 1780321924.8067,
+    "ast_hash": "70b38fd94924e4b98d8bd77f97b3479c",
+    "semantic_hash": "70b38fd94924e4b98d8bd77f97b3479c"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/enums/ProjectRole.java": {
+    "mtime": 1780324076.0580049,
+    "ast_hash": "0103e2e7d15a5a36ff2edc4de6c5a072",
+    "semantic_hash": "0103e2e7d15a5a36ff2edc4de6c5a072"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/enums/SubscriptionStatus.java": {
+    "mtime": 1780325928.584199,
+    "ast_hash": "8385b080753fc8fcbd8448a3956345b7",
+    "semantic_hash": "8385b080753fc8fcbd8448a3956345b7"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/error/ApiError.java": {
+    "mtime": 1780322108.7148032,
+    "ast_hash": "2946b549c8d6ffc67adad53f7dfcbde9",
+    "semantic_hash": "2946b549c8d6ffc67adad53f7dfcbde9"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/error/BadRequestException.java": {
+    "mtime": 1780322123.3126101,
+    "ast_hash": "6a66a2cf3780898a12d69bc4ade88a34",
+    "semantic_hash": "6a66a2cf3780898a12d69bc4ade88a34"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/error/GlobalExceptionHandler.java": {
+    "mtime": 1780322088.4386797,
+    "ast_hash": "384016b31624ed71879ec84dd5636299",
+    "semantic_hash": "384016b31624ed71879ec84dd5636299"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/error/ResourceNotFoundException.java": {
+    "mtime": 1780322117.1961157,
+    "ast_hash": "23f6c25940cc48e6eb664a10410b9672",
+    "semantic_hash": "23f6c25940cc48e6eb664a10410b9672"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/llm/LlmResponseParser.java": {
+    "mtime": 1780322784.0485718,
+    "ast_hash": "3c2fc1dfdcc4eafc9db87a2389247078",
+    "semantic_hash": "3c2fc1dfdcc4eafc9db87a2389247078"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/llm/PromptUtils.java": {
+    "mtime": 1780322906.3626764,
+    "ast_hash": "fddafc16b95d3fe9409214b47c2944ec",
+    "semantic_hash": "fddafc16b95d3fe9409214b47c2944ec"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/llm/advisors/FileTreeContextAdvisor.java": {
+    "mtime": 1780324804.102468,
+    "ast_hash": "f4ebfa21dfbadc57efb9652a808121e2",
+    "semantic_hash": "f4ebfa21dfbadc57efb9652a808121e2"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/llm/tools/CodeGenerationTools.java": {
+    "mtime": 1780324752.7916942,
+    "ast_hash": "50011f18423f1df81498a50e08d0f7a1",
+    "semantic_hash": "50011f18423f1df81498a50e08d0f7a1"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/mapper/ChatMapper.java": {
+    "mtime": 1780326139.5310133,
+    "ast_hash": "83a23f0195f09fe25c478ccc4a35bd83",
+    "semantic_hash": "83a23f0195f09fe25c478ccc4a35bd83"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/mapper/ProjectFileMapper.java": {
+    "mtime": 1780323160.7276194,
+    "ast_hash": "1f370f72b6169c0e8501db18dd1d0e05",
+    "semantic_hash": "1f370f72b6169c0e8501db18dd1d0e05"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/mapper/ProjectMapper.java": {
+    "mtime": 1780326678.1716576,
+    "ast_hash": "8ea98397beaacc467fd37335ee91664e",
+    "semantic_hash": "8ea98397beaacc467fd37335ee91664e"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/mapper/ProjectMemberMapper.java": {
+    "mtime": 1780327259.042585,
+    "ast_hash": "86358d34dc6629ef5b11a5e293efcfe8",
+    "semantic_hash": "86358d34dc6629ef5b11a5e293efcfe8"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/mapper/SubscriptionMapper.java": {
+    "mtime": 1780326049.9101663,
+    "ast_hash": "7e2f25bd5d4b44793827dd50de1cee87",
+    "semantic_hash": "7e2f25bd5d4b44793827dd50de1cee87"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/mapper/UserMapper.java": {
+    "mtime": 1780323387.559986,
+    "ast_hash": "0930ba9c859edf4acedd2e8f1d370308",
+    "semantic_hash": "0930ba9c859edf4acedd2e8f1d370308"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/repository/ChatEventRepository.java": {
+    "mtime": 1780323508.3337488,
+    "ast_hash": "b9f06bd6403131d0957e803702d47877",
+    "semantic_hash": "b9f06bd6403131d0957e803702d47877"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/repository/ChatMessageRepository.java": {
+    "mtime": 1780323556.41787,
+    "ast_hash": "22dc5cf9dfd3b834926606dda1f076ba",
+    "semantic_hash": "22dc5cf9dfd3b834926606dda1f076ba"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/repository/ChatSessionRepository.java": {
+    "mtime": 1780323597.263487,
+    "ast_hash": "f39b49aabf70b15eed9a28a4c125fcea",
+    "semantic_hash": "f39b49aabf70b15eed9a28a4c125fcea"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/repository/PlanRepository.java": {
+    "mtime": 1780323630.717947,
+    "ast_hash": "0c167027007c793ac391c843b8f7402f",
+    "semantic_hash": "0c167027007c793ac391c843b8f7402f"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/repository/ProjectFileRepository.java": {
+    "mtime": 1780323658.3324842,
+    "ast_hash": "d319c7319b67445e2b92d020f5e4253b",
+    "semantic_hash": "d319c7319b67445e2b92d020f5e4253b"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/repository/ProjectMemberRepository.java": {
+    "mtime": 1780327133.2298558,
+    "ast_hash": "10a2c415a69e417783d51d853a6f68b8",
+    "semantic_hash": "10a2c415a69e417783d51d853a6f68b8"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/repository/ProjectRepository.java": {
+    "mtime": 1780327137.393158,
+    "ast_hash": "1cb046f01760d462dc5706222bc4152f",
+    "semantic_hash": "1cb046f01760d462dc5706222bc4152f"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/repository/SubscriptionRepository.java": {
+    "mtime": 1780326017.887748,
+    "ast_hash": "9f71a21556a829e94bb27a3c72813b36",
+    "semantic_hash": "9f71a21556a829e94bb27a3c72813b36"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/repository/UsageLogRepository.java": {
+    "mtime": 1780323559.6161473,
+    "ast_hash": "5a526fa252bd46647c924ba6606850a6",
+    "semantic_hash": "5a526fa252bd46647c924ba6606850a6"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/repository/UserRepository.java": {
+    "mtime": 1780323445.0766604,
+    "ast_hash": "72cdf1ae36caebaecd672f1965ba4978",
+    "semantic_hash": "72cdf1ae36caebaecd672f1965ba4978"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/security/AuthUtil.java": {
+    "mtime": 1780323806.4848228,
+    "ast_hash": "975908507489c904ec56f3515edbff54",
+    "semantic_hash": "975908507489c904ec56f3515edbff54"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/security/JwtAuthFilter.java": {
+    "mtime": 1780323870.731276,
+    "ast_hash": "fbd2dc19cfadc8e8687830d757ccd788",
+    "semantic_hash": "fbd2dc19cfadc8e8687830d757ccd788"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/security/JwtUserPrincipal.java": {
+    "mtime": 1780323841.1345887,
+    "ast_hash": "f79a372dadfef8cba4ffd9c44d9ea504",
+    "semantic_hash": "f79a372dadfef8cba4ffd9c44d9ea504"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/security/SecurityExpressions.java": {
+    "mtime": 1780324093.9134097,
+    "ast_hash": "b8485ea3a99957fa88d3e41e6af91e97",
+    "semantic_hash": "b8485ea3a99957fa88d3e41e6af91e97"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/security/WebSecurityConfig.java": {
+    "mtime": 1780324027.232701,
+    "ast_hash": "c260dfb8caa876edfff6c6b71decb117",
+    "semantic_hash": "c260dfb8caa876edfff6c6b71decb117"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/AiGenerationService.java": {
+    "mtime": 1780324173.6607685,
+    "ast_hash": "c4b3b53f8a86726473779669549b2685",
+    "semantic_hash": "c4b3b53f8a86726473779669549b2685"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/AuthService.java": {
+    "mtime": 1779607118.5305746,
+    "ast_hash": "84b6be9f71a71a3aaf28614f4750f759",
+    "semantic_hash": "84b6be9f71a71a3aaf28614f4750f759"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/ChatService.java": {
+    "mtime": 1780326180.131375,
+    "ast_hash": "7b30d58350bc4ca9043f382f893a0c0b",
+    "semantic_hash": "7b30d58350bc4ca9043f382f893a0c0b"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/PaymentProcessor.java": {
+    "mtime": 1780324234.4067268,
+    "ast_hash": "01c98480d5e0ff5d0d4b8feefc89be18",
+    "semantic_hash": "01c98480d5e0ff5d0d4b8feefc89be18"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/PlanService.java": {
+    "mtime": 1779609037.6285796,
+    "ast_hash": "5adfd9c89ca516d0358b05094b688a57",
+    "semantic_hash": "5adfd9c89ca516d0358b05094b688a57"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/ProjectFileService.java": {
+    "mtime": 1780325489.2858417,
+    "ast_hash": "6872a02ead68bcffeeac6fa2c0076634",
+    "semantic_hash": "6872a02ead68bcffeeac6fa2c0076634"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/ProjectMemberService.java": {
+    "mtime": 1780325500.025349,
+    "ast_hash": "5f2b7323abce97ad33864e1b9635bebd",
+    "semantic_hash": "5f2b7323abce97ad33864e1b9635bebd"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/ProjectService.java": {
+    "mtime": 1780325513.3055105,
+    "ast_hash": "3d448a5eb97690ee76b5601e922c6825",
+    "semantic_hash": "3d448a5eb97690ee76b5601e922c6825"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/ProjectTemplateService.java": {
+    "mtime": 1780325402.0466394,
+    "ast_hash": "5f61f4096fed5becf0dfdf4021ac0236",
+    "semantic_hash": "5f61f4096fed5becf0dfdf4021ac0236"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/SubscriptionService.java": {
+    "mtime": 1780325423.2491682,
+    "ast_hash": "d3d987bbc973127ba0e4242dbecb6cc9",
+    "semantic_hash": "d3d987bbc973127ba0e4242dbecb6cc9"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/UsageService.java": {
+    "mtime": 1780324850.9767358,
+    "ast_hash": "b82776473d6b3908fb7b9719de65de26",
+    "semantic_hash": "b82776473d6b3908fb7b9719de65de26"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/UserService.java": {
+    "mtime": 1779607345.0570045,
+    "ast_hash": "11093f2347bada97ef065a231fb9dbff",
+    "semantic_hash": "11093f2347bada97ef065a231fb9dbff"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/impl/AiGenerationServiceImpl.java": {
+    "mtime": 1780326829.2675188,
+    "ast_hash": "d2861838607c22c488c7a8e5b238342c",
+    "semantic_hash": "d2861838607c22c488c7a8e5b238342c"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/impl/AuthServiceImpl.java": {
+    "mtime": 1780324625.7222147,
+    "ast_hash": "4ca76cb7a9458b48442262e484cfe7d4",
+    "semantic_hash": "4ca76cb7a9458b48442262e484cfe7d4"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/impl/ChatServiceImpl.java": {
+    "mtime": 1780326194.7811327,
+    "ast_hash": "5910600294b627acc4f3f1a00a090035",
+    "semantic_hash": "5910600294b627acc4f3f1a00a090035"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/impl/PlanServiceImpl.java": {
+    "mtime": 1779613371.1416492,
+    "ast_hash": "b4955937eb3ab599dadb893bcaeabf92",
+    "semantic_hash": "b4955937eb3ab599dadb893bcaeabf92"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/impl/ProjectFileServiceImpl.java": {
+    "mtime": 1780326289.3340092,
+    "ast_hash": "6712848a352584c83217f2a7e4e369cd",
+    "semantic_hash": "6712848a352584c83217f2a7e4e369cd"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/impl/ProjectMemberServiceImpl.java": {
+    "mtime": 1780326308.4987717,
+    "ast_hash": "658743860a03270ae7e823a1abd1f482",
+    "semantic_hash": "658743860a03270ae7e823a1abd1f482"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/impl/ProjectServiceImpl.java": {
+    "mtime": 1780325783.679346,
+    "ast_hash": "04f1b6e537e76b521c0f2f3ca39f699a",
+    "semantic_hash": "04f1b6e537e76b521c0f2f3ca39f699a"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/impl/ProjectTemplateServiceImpl.java": {
+    "mtime": 1780326367.7301936,
+    "ast_hash": "ce5e558f7cdeedbdf4d4ff9aaf07a9d1",
+    "semantic_hash": "ce5e558f7cdeedbdf4d4ff9aaf07a9d1"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/impl/StripePaymentProcessor.java": {
+    "mtime": 1780326418.0872808,
+    "ast_hash": "13554af5ec18fd637c05e5b49db3d0a3",
+    "semantic_hash": "13554af5ec18fd637c05e5b49db3d0a3"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/impl/SubscriptionServiceImpl.java": {
+    "mtime": 1780326029.9884717,
+    "ast_hash": "0cdf4f0908ed3c3c587095aed0d72293",
+    "semantic_hash": "0cdf4f0908ed3c3c587095aed0d72293"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/impl/UsageServiceImpl.java": {
+    "mtime": 1780326452.967628,
+    "ast_hash": "90d0133286a828171057df204e5d0e11",
+    "semantic_hash": "90d0133286a828171057df204e5d0e11"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/main/java/com/morphcode/ai/service/impl/UserServiceImpl.java": {
+    "mtime": 1780326495.1356595,
+    "ast_hash": "a2986aec8f718c36933a82fc9ecc3920",
+    "semantic_hash": "a2986aec8f718c36933a82fc9ecc3920"
+  },
+  "/Users/ayushpandey/Documents/morphcode/src/test/java/com/morphcode/ai/morphcode/MorphcodeApplicationTests.java": {
+    "mtime": 1779603409.0,
+    "ast_hash": "5895a786610029f6327f634029dc0508",
+    "semantic_hash": "5895a786610029f6327f634029dc0508"
+  },
+  "/Users/ayushpandey/Documents/morphcode/Diagrams/api-config.md": {
+    "mtime": 1779606231.889793,
+    "ast_hash": "057802f04538421a70a1f349e8214681",
+    "semantic_hash": "057802f04538421a70a1f349e8214681"
+  },
+  "/Users/ayushpandey/Documents/morphcode/Diagrams/project-architecture.md": {
+    "mtime": 1779606339.4489374,
+    "ast_hash": "cc08c1a840ef6a9741ece05037381c55",
+    "semantic_hash": "cc08c1a840ef6a9741ece05037381c55"
+  },
+  "/Users/ayushpandey/Documents/morphcode/services.docker-compose.yaml": {
+    "mtime": 1780328656.689638,
+    "ast_hash": "d17e614f91fd38bbbe738ca1d916851a",
+    "semantic_hash": "d17e614f91fd38bbbe738ca1d916851a"
+  },
+  "/Users/ayushpandey/Documents/morphcode/Diagrams/ai_Architecture.png": {
+    "mtime": 1780327483.4822633,
+    "ast_hash": "1d043457fea3f43edbc2173a8ba8a814",
+    "semantic_hash": "1d043457fea3f43edbc2173a8ba8a814"
+  },
+  "/Users/ayushpandey/Documents/morphcode/Diagrams/code_execution_system_architecture_95ee32b790.png": {
+    "mtime": 1780328259.5787385,
+    "ast_hash": "e8749320f7806da632ebf3f51fe21685",
+    "semantic_hash": "e8749320f7806da632ebf3f51fe21685"
+  }
+}

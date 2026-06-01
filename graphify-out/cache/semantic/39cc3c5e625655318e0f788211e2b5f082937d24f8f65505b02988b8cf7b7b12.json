@@ -1,0 +1,1 @@
+{"nodes": [{"id": "dto_signuprequest_record", "label": "SignupRequest DTO (username + name + password)", "file_type": "code", "source_file": "src/main/java/com/morphcode/ai/dto/auth/SignupRequest.java", "source_location": "line 7", "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [], "hyperedges": []}
