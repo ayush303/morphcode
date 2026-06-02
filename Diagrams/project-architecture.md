@@ -266,17 +266,17 @@ stateDiagram-v2
 
 ```mermaid
 graph LR
-    subgraph K8s Namespace per Project
-        SVC[Service\nport 80 → 3000]
-        POD[Pod\nWebContainer / Node.js image]
-        PVC[Mounted MinIO\nproject files]
+    subgraph ns["K8s Namespace per Project"]
+        SVC["Service\nport 80 → 3000"]
+        POD["Pod\nWebContainer / Node.js image"]
+        PVC["Mounted MinIO\nproject files"]
     end
 
-    ING[Ingress\nproject-456.preview.app] --> SVC
+    ING["Ingress\nproject-456.preview.app"] --> SVC
     SVC --> POD
     POD --- PVC
 
-    EXEC[execution-service] -->|create namespace| K8s Namespace per Project
+    EXEC[execution-service] -->|create namespace| ns
     EXEC -->|watch events| POD
     EXEC -->|stream logs| USER
 ```
@@ -863,7 +863,7 @@ graph TB
 
 ```mermaid
 mindmap
-  root((Lovable Clone))
+  root((MorphCode))
     Auth
       POST /auth/signup
       POST /auth/login
