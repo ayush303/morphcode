@@ -1,90 +1,144 @@
-<svg width="900" height="180" xmlns="http://www.w3.org/2000/svg">
+<svg width="900" height="200" xmlns="http://www.w3.org/2000/svg">
   <defs>
 
-    <!-- Main text gradient: fuchsia → violet → blue → cyan -->
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"   stop-color="#E879F9"/>
-      <stop offset="22%"  stop-color="#A855F7"/>
-      <stop offset="45%"  stop-color="#6366F1"/>
-      <stop offset="68%"  stop-color="#3B82F6"/>
-      <stop offset="100%" stop-color="#22D3EE"/>
+    <!-- ── GRADIENTS ── -->
+
+    <!-- Very subtle warm-white gradient on title (white → barely warm) -->
+    <linearGradient id="titleGrad" x1="160" y1="0" x2="880" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F0EAD6"/>
     </linearGradient>
 
-    <!-- Background gradient -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   stop-color="#0D0820"/>
-      <stop offset="100%" stop-color="#06111F"/>
+    <!-- Hexagon fill: muted dark amber -->
+    <linearGradient id="hexFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#C47D1A"/>
+      <stop offset="100%" stop-color="#7C3D0B"/>
     </linearGradient>
 
-    <!-- Soft purple glow on the text -->
-    <filter id="glow" x="-15%" y="-50%" width="130%" height="200%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+    <!-- Divider: amber, fades top and bottom -->
+    <linearGradient id="divGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#F59E0B" stop-opacity="0"/>
+      <stop offset="28%"  stop-color="#F59E0B" stop-opacity="0.40"/>
+      <stop offset="72%"  stop-color="#F59E0B" stop-opacity="0.40"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Tagline separator lines: fade outward -->
+    <linearGradient id="ruleL" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#94A3B8" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.30"/>
+    </linearGradient>
+    <linearGradient id="ruleR" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#94A3B8" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#94A3B8" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- ── FILTERS ── -->
+
+    <!-- Soft glow behind logo area (single, wide blob) -->
+    <filter id="blobBlur" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="32"/>
+    </filter>
+
+    <!-- Minimal hex glow -->
+    <filter id="hexGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="6" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Soft, single-layer text glow — not neon, just a gentle halo -->
+    <filter id="titleGlow" x="-10%" y="-70%" width="120%" height="240%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="halo"/>
+      <feComponentTransfer in="halo" result="warm">
+        <feFuncR type="linear" slope="1.1"/>
+        <feFuncG type="linear" slope="0.9"/>
+        <feFuncB type="linear" slope="0.6"/>
+      </feComponentTransfer>
       <feMerge>
-        <feMergeNode in="blur"/>
+        <feMergeNode in="warm"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <!-- Subtle grid pattern -->
-    <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.06"/>
-    </pattern>
-
-    <!-- Border gradient -->
-    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"   stop-color="#A855F7" stop-opacity="0.6"/>
-      <stop offset="50%"  stop-color="#3B82F6" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0.6"/>
-    </linearGradient>
-
   </defs>
 
-  <!-- Dark background -->
-  <rect width="900" height="180" rx="18" fill="url(#bgGrad)"/>
+  <!-- ══ BACKGROUND: clean deep dark ══ -->
+  <rect width="900" height="200" rx="16" fill="#0D1117"/>
 
-  <!-- Dot grid overlay -->
-  <rect width="900" height="180" rx="18" fill="url(#dots)"/>
+  <!-- Very faint warm ambient glow behind logo -->
+  <ellipse cx="82" cy="100" rx="110" ry="85"
+           fill="#D97706" opacity="0.09" filter="url(#blobBlur)"/>
 
-  <!-- Gradient border (1.5px) -->
-  <rect x="0.75" y="0.75" width="898.5" height="178.5" rx="17.25"
-        fill="none" stroke="url(#borderGrad)" stroke-width="1.5"/>
+  <!-- ══ CARD BORDER: thin white, low opacity ══ -->
+  <rect x="0.75" y="0.75" width="898.5" height="198.5" rx="15.5"
+        fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.07"/>
 
-  <!-- Left ambient glow blob -->
-  <ellipse cx="110" cy="90" rx="90" ry="60" fill="#A855F7" opacity="0.10"/>
+  <!-- Thin amber accent on top edge (just the top, not a full frame) -->
+  <line x1="160" y1="0.75" x2="740" y2="0.75"
+        stroke="#F59E0B" stroke-width="1.5" opacity="0.30"/>
 
-  <!-- Right ambient glow blob -->
-  <ellipse cx="790" cy="90" rx="90" ry="60" fill="#22D3EE" opacity="0.10"/>
+  <!-- ══ LOGO MARK ══ -->
 
-  <!-- Centre ambient glow under the text -->
-  <ellipse cx="450" cy="115" rx="260" ry="40" fill="#6366F1" opacity="0.08"/>
+  <!-- Outer hexagon ring: amber outline, subtle -->
+  <polygon
+    points="82,58 116.9,78 116.9,118 82,138 47.1,118 47.1,78"
+    fill="none" stroke="#F59E0B" stroke-width="1.2" opacity="0.35"/>
 
-  <!-- MORPHCODE main text -->
+  <!-- Hexagon body: muted amber fill -->
+  <polygon
+    points="82,63 113.1,81 113.1,115 82,133 50.9,115 50.9,81"
+    fill="url(#hexFill)" filter="url(#hexGlow)"/>
+
+  <!-- Top-left edge highlight (single bevel catch) -->
+  <line x1="82" y1="63" x2="50.9" y2="81"
+        stroke="#FDE68A" stroke-width="1" opacity="0.40"/>
+
+  <!-- M lettermark -->
   <text
-    x="450" y="112"
-    font-family="'Arial Black', 'Arial Bold', Impact, sans-serif"
-    font-size="88"
-    font-weight="900"
-    letter-spacing="10"
+    x="82" y="107"
+    font-family="Impact, 'Arial Black', sans-serif"
+    font-size="44" font-weight="900"
     text-anchor="middle"
-    fill="url(#textGrad)"
-    filter="url(#glow)"
+    fill="#FFFBEB"
+  >M</text>
+
+  <!-- Small code tag below M -->
+  <text
+    x="82" y="122"
+    font-family="'Courier New', monospace"
+    font-size="8.5" font-weight="700"
+    text-anchor="middle"
+    fill="#FDE68A" opacity="0.65"
+    letter-spacing="2"
+  >&lt;/&gt;</text>
+
+  <!-- ══ DIVIDER ══ -->
+  <line x1="150" y1="38" x2="150" y2="162"
+        stroke="url(#divGrad)" stroke-width="0.9"/>
+
+  <!-- ══ MORPHCODE TITLE ══ -->
+  <text
+    x="516" y="118"
+    font-family="Impact, 'Arial Black', 'Helvetica Neue', sans-serif"
+    font-size="80" font-weight="900" letter-spacing="7"
+    text-anchor="middle"
+    fill="url(#titleGrad)"
+    filter="url(#titleGlow)"
   >MORPHCODE</text>
 
-  <!-- Tagline -->
+  <!-- ══ TAGLINE ══ -->
+
+  <!-- Thin separator rule -->
+  <line x1="168" y1="141" x2="360" y2="141" stroke="url(#ruleL)" stroke-width="0.7"/>
+  <line x1="672" y1="141" x2="864" y2="141" stroke="url(#ruleR)" stroke-width="0.7"/>
+
+  <!-- Tagline text — readable gray, monospace -->
   <text
-    x="450" y="148"
-    font-family="'Arial', Helvetica, sans-serif"
-    font-size="13"
-    font-weight="400"
-    letter-spacing="5"
+    x="516" y="160"
+    font-family="'Courier New', 'Lucida Console', monospace"
+    font-size="12.5" letter-spacing="4"
     text-anchor="middle"
     fill="#94A3B8"
-  >AI · POWERED · REACT · IDE</text>
-
-  <!-- Decorative left line -->
-  <line x1="60" y1="148" x2="220" y2="148" stroke="url(#borderGrad)" stroke-width="0.8" opacity="0.5"/>
-
-  <!-- Decorative right line -->
-  <line x1="680" y1="148" x2="840" y2="148" stroke="url(#borderGrad)" stroke-width="0.8" opacity="0.5"/>
+  >// AI-POWERED · REACT · IDE</text>
 
 </svg>
