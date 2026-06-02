@@ -443,7 +443,7 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
-    participant C as Client (Browser)
+    participant C as Client Browser
     participant F as JwtAuthFilter
     participant CC as ChatController
     participant AG as AiGenerationServiceImpl
@@ -452,17 +452,17 @@ sequenceDiagram
     participant CSR as ChatSessionRepository
     participant FTA as FileTreeContextAdvisor
     participant CL as Spring AI ChatClient
-    participant OR as OpenRouter (Gemini Flash)
+    participant OR as OpenRouter Gemini Flash
     participant CT as CodeGenerationTools
     participant PFS as ProjectFileServiceImpl
     participant MIO as MinIO
-    participant PAR as LlmResponseParser
+    participant PARSER as LlmResponseParser
     participant CMR as ChatMessageRepository
     participant CER as ChatEventRepository
     participant US as UsageServiceImpl
     participant DB as PostgreSQL
 
-    C->>F: POST /api/chat/stream Authorization: Bearer jwt Body: {message, projectId}
+    C->>F: POST /api/chat/stream Authorization Bearer jwt Body message projectId
     F->>F: extract and verify JWT
     F->>F: set JwtUserPrincipal in SecurityContext
     F->>CC: forward request
@@ -472,20 +472,20 @@ sequenceDiagram
     Note over AG,SE: @PreAuthorize checks canEditProject
     AG->>SE: canEditProject(projectId)
     SE->>PMR: findRoleByProjectIdAndUserId(projectId, userId)
-    PMR->>DB: SELECT project_role FROM project_members WHERE project_id=? AND user_id=?
+    PMR->>DB: SELECT project_role FROM project_members WHERE project_id AND user_id
     DB-->>PMR: OWNER
     SE-->>AG: true
 
     AG->>CSR: findById(ChatSessionId)
-    CSR->>DB: SELECT FROM chat_sessions WHERE project_id=? AND user_id=?
-    DB-->>CSR: null (first time)
+    CSR->>DB: SELECT FROM chat_sessions WHERE project_id AND user_id
+    DB-->>CSR: null first time
     AG->>CSR: save(new ChatSession)
     CSR->>DB: INSERT INTO chat_sessions
 
     Note over AG,OR: Build prompt through advisor chain
     AG->>FTA: adviseStream(request, chain)
     FTA->>PFS: getFileTree(projectId)
-    PFS->>DB: SELECT FROM project_files WHERE project_id=?
+    PFS->>DB: SELECT FROM project_files WHERE project_id
     DB-->>PFS: FileNode list
     FTA->>FTA: inject FILE_TREE system message into prompt
     FTA->>CL: nextStream(augmentedRequest)
@@ -501,9 +501,9 @@ sequenceDiagram
     end
 
     Note over OR,CT: LLM calls read_files tool
-    OR->>CL: tool_call read_files(["src/App.tsx"])
-    CL->>CT: readFiles(["src/App.tsx"])
-    CT->>PFS: getFileContent(projectId, "src/App.tsx")
+    OR->>CL: tool_call read_files src/App.tsx
+    CL->>CT: readFiles(src/App.tsx)
+    CT->>PFS: getFileContent(projectId, src/App.tsx)
     PFS->>MIO: GetObject bucket=projects key=1/src/App.tsx
     MIO-->>PFS: InputStream
     CT-->>CL: formatted file content
@@ -513,7 +513,7 @@ sequenceDiagram
     Note over AG,DB: Stream completes - finalizeChats on boundedElastic scheduler
 
     AG->>US: recordTokenUsage(userId, totalTokens)
-    US->>DB: UPSERT usage_logs SET tokens_used=tokens_used+N
+    US->>DB: UPSERT usage_logs SET tokens_used = tokens_used + N
 
     AG->>CMR: save(USER ChatMessage)
     CMR->>DB: INSERT INTO chat_messages role=USER
@@ -521,9 +521,9 @@ sequenceDiagram
     AG->>CMR: save(ASSISTANT ChatMessage)
     CMR->>DB: INSERT INTO chat_messages role=ASSISTANT
 
-    AG->>PAR: parseChatEvents(fullResponseBuffer, assistantMessage)
-    PAR->>PAR: regex match message, file, tool tags
-    PAR-->>AG: [THOUGHT, MESSAGE, FILE_EDIT, TOOL_LOG] events
+    AG->>PARSER: parseChatEvents(fullResponseBuffer, assistantMessage)
+    PARSER->>PARSER: regex match message file tool tags
+    PARSER-->>AG: THOUGHT MESSAGE FILE_EDIT TOOL_LOG events
 
     loop For each FILE_EDIT event
         AG->>PFS: saveFile(projectId, filePath, content)

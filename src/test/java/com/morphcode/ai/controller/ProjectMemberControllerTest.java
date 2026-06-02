@@ -12,12 +12,15 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.Instant;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
@@ -26,7 +29,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(
         controllers = ProjectMemberController.class,
-        excludeAutoConfiguration = {SecurityAutoConfiguration.class, SecurityFilterAutoConfiguration.class}
+        excludeAutoConfiguration = {SecurityAutoConfiguration.class, SecurityFilterAutoConfiguration.class},
+        excludeFilters = {
+                @ComponentScan.Filter(type = FilterType.REGEX, pattern = ".*WebSecurityConfig"),
+                @ComponentScan.Filter(type = FilterType.REGEX, pattern = ".*JwtAuthFilter")
+        }
 )
 class ProjectMemberControllerTest {
 
@@ -92,16 +99,18 @@ class ProjectMemberControllerTest {
                 .andExpect(status().isBadRequest());
     }
 
+    // RuntimeException is not mapped by GlobalExceptionHandler so it escapes MockMvc
+    // as a NestedServletException — assert the cause rather than an HTTP status.
     @Test
-    void inviteMember_selfInvite_returns500() throws Exception {
+    void inviteMember_selfInvite_throwsRuntimeException() {
         InviteMemberRequest request = new InviteMemberRequest("owner@example.com", ProjectRole.EDITOR);
         when(projectMemberService.inviteMember(eq(1L), any()))
                 .thenThrow(new RuntimeException("Cannot invite yourself"));
 
-        mockMvc.perform(post("/api/projects/1/members")
+        assertThatThrownBy(() -> mockMvc.perform(post("/api/projects/1/members")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(request)))
-                .andExpect(status().is5xxServerError());
+                        .content(objectMapper.writeValueAsString(request))))
+                .hasMessageContaining("Cannot invite yourself");
     }
 
     @Test
@@ -128,12 +137,13 @@ class ProjectMemberControllerTest {
         verify(projectMemberService).removeProjectMember(1L, 20L);
     }
 
+    // RuntimeException escapes MockMvc as NestedServletException — assert the cause.
     @Test
-    void removeMember_notFound_returns500() throws Exception {
+    void removeMember_notFound_throwsRuntimeException() {
         doThrow(new RuntimeException("Member not found in project"))
                 .when(projectMemberService).removeProjectMember(1L, 99L);
 
-        mockMvc.perform(delete("/api/projects/1/members/99"))
-                .andExpect(status().is5xxServerError());
+        assertThatThrownBy(() -> mockMvc.perform(delete("/api/projects/1/members/99")))
+                .hasMessageContaining("Member not found in project");
     }
 }

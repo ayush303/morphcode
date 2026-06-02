@@ -20,6 +20,7 @@ import java.time.Instant;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -49,7 +50,7 @@ class ChatServiceImplTest {
         ChatResponse chatResponse = new ChatResponse(1L, MessageRole.USER, List.of(), "Hello", 0, Instant.now());
 
         when(authUtil.getCurrentUserId()).thenReturn(userId);
-        when(chatSessionRepository.getReferenceById(sessionId)).thenReturn(session);
+        when(chatSessionRepository.getReferenceById(any(ChatSessionId.class))).thenReturn(session);
         when(chatMessageRepository.findByChatSession(session)).thenReturn(List.of(message));
         when(chatMapper.fromListOfChatMessage(List.of(message))).thenReturn(List.of(chatResponse));
 
@@ -68,7 +69,7 @@ class ChatServiceImplTest {
         ChatSession session = ChatSession.builder().id(sessionId).build();
 
         when(authUtil.getCurrentUserId()).thenReturn(userId);
-        when(chatSessionRepository.getReferenceById(sessionId)).thenReturn(session);
+        when(chatSessionRepository.getReferenceById(any(ChatSessionId.class))).thenReturn(session);
         when(chatMessageRepository.findByChatSession(session)).thenReturn(List.of());
         when(chatMapper.fromListOfChatMessage(List.of())).thenReturn(List.of());
 
