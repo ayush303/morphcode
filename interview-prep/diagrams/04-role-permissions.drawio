@@ -1,0 +1,99 @@
+<mxfile host="Electron" version="21.0.0">
+  <diagram name="Role Permissions" id="roles">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="2" value="RBAC — Role Permissions Matrix" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="630" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ===== HEADER ROW ===== -->
+        <mxCell id="3" value="&lt;b&gt;Role&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#000000;fontColor=#ffffff;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="&lt;b&gt;View Files&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;canView()&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#000000;fontColor=#ffffff;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="60" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="&lt;b&gt;Edit via AI&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;canEdit()&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#000000;fontColor=#ffffff;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="60" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="&lt;b&gt;Delete Project&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;canDelete()&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#000000;fontColor=#ffffff;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="60" width="130" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="&lt;b&gt;Manage Members&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;canManageMembers()&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#000000;fontColor=#ffffff;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="60" width="140" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ===== OWNER ROW ===== -->
+        <mxCell id="8" value="&lt;b&gt;OWNER&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="115" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="&lt;b&gt;✓&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=20;fontColor=#276221;" vertex="1" parent="1">
+          <mxGeometry x="180" y="115" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="&lt;b&gt;✓&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=20;fontColor=#276221;" vertex="1" parent="1">
+          <mxGeometry x="300" y="115" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;✓&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=20;fontColor=#276221;" vertex="1" parent="1">
+          <mxGeometry x="420" y="115" width="130" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="&lt;b&gt;✓&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=20;fontColor=#276221;" vertex="1" parent="1">
+          <mxGeometry x="550" y="115" width="140" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ===== EDITOR ROW ===== -->
+        <mxCell id="13" value="&lt;b&gt;EDITOR&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="170" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;b&gt;✓&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=20;fontColor=#276221;" vertex="1" parent="1">
+          <mxGeometry x="180" y="170" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="&lt;b&gt;✓&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=20;fontColor=#276221;" vertex="1" parent="1">
+          <mxGeometry x="300" y="170" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="&lt;b&gt;✗&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=20;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="420" y="170" width="130" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="&lt;b&gt;✗&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=20;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="550" y="170" width="140" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ===== VIEWER ROW ===== -->
+        <mxCell id="18" value="&lt;b&gt;VIEWER&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="225" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="&lt;b&gt;✓&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=20;fontColor=#276221;" vertex="1" parent="1">
+          <mxGeometry x="180" y="225" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="&lt;b&gt;✗&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=20;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="300" y="225" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="&lt;b&gt;✗&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=20;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="420" y="225" width="130" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="&lt;b&gt;✗&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=20;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="550" y="225" width="140" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- How it works section -->
+        <mxCell id="23" value="&lt;b&gt;How it works:&lt;/b&gt; @PreAuthorize(&quot;@security.canEditProject(#projectId)&quot;) → SecurityExpressions bean → projectMemberRepository.findById(ProjectMemberId{userId, projectId}) → role.getPermissions().contains(permission)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="310" width="630" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ProjectRole enum note -->
+        <mxCell id="24" value="&lt;b&gt;ProjectRole enum:&lt;/b&gt; Each role stores a Set&amp;lt;ProjectPermission&amp;gt;&lt;br&gt;OWNER = {VIEW, EDIT, DELETE, MANAGE_MEMBERS} · EDITOR = {VIEW, EDIT} · VIEWER = {VIEW}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="380" width="630" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Invite rule -->
+        <mxCell id="25" value="&lt;b&gt;Invite rule:&lt;/b&gt; Cannot invite yourself · Cannot invite same user twice · Must be OWNER to invite" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="445" width="630" height="40" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

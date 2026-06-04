@@ -1,0 +1,161 @@
+<mxfile host="Electron" version="21.0.0">
+  <diagram name="Request Security Chain" id="security-chain">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="2" value="Request Security Chain — MorphCode" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="10" width="500" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 1. Incoming request -->
+        <mxCell id="3" value="&lt;b&gt;Incoming HTTP Request&lt;/b&gt;&lt;br&gt;Authorization: Bearer &amp;lt;token&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="50" width="300" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- 2. JwtAuthFilter -->
+        <mxCell id="4" value="&lt;b&gt;JwtAuthFilter.doFilterInternal()&lt;/b&gt;&lt;br&gt;Extends OncePerRequestFilter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="165" width="300" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- 3. Diamond: Token present? -->
+        <mxCell id="5" value="&lt;b&gt;Token present?&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="280" width="260" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Error: No token -->
+        <mxCell id="6" value="&lt;b&gt;Pass through (no auth)&lt;/b&gt;&lt;br&gt;Public endpoints succeed&lt;br&gt;Protected → 403" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="430" y="291" width="170" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 4. Parse JWT -->
+        <mxCell id="7" value="JJWT.parseSignedClaims(token)&lt;br&gt;HS256, secret key from env" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="410" width="300" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- 5. Diamond: Valid? -->
+        <mxCell id="8" value="&lt;b&gt;Valid signature&lt;br&gt;&amp; not expired?&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="525" width="260" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Error: Invalid token -->
+        <mxCell id="9" value="&lt;b&gt;401 Unauthorized&lt;/b&gt;&lt;br&gt;Invalid / expired JWT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="430" y="538" width="170" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 6. Set SecurityContext -->
+        <mxCell id="10" value="Extract userId from claims&lt;br&gt;Set &lt;b&gt;UsernamePasswordAuthenticationToken&lt;/b&gt;&lt;br&gt;in SecurityContextHolder" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="655" width="300" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 7. Controller reached -->
+        <mxCell id="11" value="filterChain.doFilter() → &lt;b&gt;Controller&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="775" width="300" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 8. @PreAuthorize -->
+        <mxCell id="12" value="&lt;b&gt;@PreAuthorize&lt;/b&gt;&lt;br&gt;&quot;@security.canEditProject(#projectId)&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="885" width="300" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- 9. SecurityExpressions -->
+        <mxCell id="13" value="SecurityExpressions.canEditProject()&lt;br&gt;→ projectMemberRepository&lt;br&gt;.findById(ProjectMemberId{userId, projectId})" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1000" width="300" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- 10. Diamond: Member exists? -->
+        <mxCell id="14" value="&lt;b&gt;Member exists?&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1125" width="260" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Error: Not a member -->
+        <mxCell id="15" value="&lt;b&gt;403 Forbidden&lt;/b&gt;&lt;br&gt;Not a project member" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="430" y="1138" width="170" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 11. Diamond: Has permission? -->
+        <mxCell id="16" value="&lt;b&gt;Role has&lt;br&gt;permission?&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1255" width="260" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Error: Insufficient role -->
+        <mxCell id="17" value="&lt;b&gt;403 Forbidden&lt;/b&gt;&lt;br&gt;Insufficient role" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="430" y="1268" width="170" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 12. Success -->
+        <mxCell id="18" value="✓ &lt;b&gt;Controller Method Executes&lt;/b&gt;&lt;br&gt;→ Service → Repository → Response" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1385" width="300" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ===== EDGES ===== -->
+        <mxCell id="19" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" source="3" target="4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" source="4" target="5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Diamond 1: No → right (pass through) -->
+        <mxCell id="21" value="No token" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;fontColor=#b85450;fontStyle=1;" edge="1" source="5" target="6" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Diamond 1: Yes → down -->
+        <mxCell id="22" value="Present" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10;fontColor=#276221;fontStyle=1;" edge="1" source="5" target="7" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="23" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" source="7" target="8" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Diamond 2: No → right (invalid) -->
+        <mxCell id="24" value="No" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;fontColor=#b85450;fontStyle=1;" edge="1" source="8" target="9" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Diamond 2: Yes → down -->
+        <mxCell id="25" value="Valid" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10;fontColor=#276221;fontStyle=1;" edge="1" source="8" target="10" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="26" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" source="10" target="11" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" source="11" target="12" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" source="12" target="13" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" source="13" target="14" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Diamond 3: No → right (not member) -->
+        <mxCell id="33" value="No" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;fontColor=#b85450;fontStyle=1;" edge="1" source="14" target="15" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Diamond 3: Yes → down -->
+        <mxCell id="34" value="Yes" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10;fontColor=#276221;fontStyle=1;" edge="1" source="14" target="16" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Diamond 4: No → right (insufficient role) -->
+        <mxCell id="35" value="No" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;fontColor=#b85450;fontStyle=1;" edge="1" source="16" target="17" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Diamond 4: Yes → down (success) -->
+        <mxCell id="36" value="Yes" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10;fontColor=#276221;fontStyle=1;" edge="1" source="16" target="18" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
