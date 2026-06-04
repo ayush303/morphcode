@@ -1,0 +1,96 @@
+<mxfile host="Electron" version="21.0.0">
+  <diagram name="Architecture Layers" id="arch-layers">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="2" value="MorphCode — System Architecture Layers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="10" width="560" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- CLIENT -->
+        <mxCell id="3" value="&lt;b&gt;Client / Browser&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="80" y="55" width="560" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Client → Security -->
+        <mxCell id="4" value="HTTP / SSE" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=11;" edge="1" source="3" target="5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- SECURITY -->
+        <mxCell id="5" value="&lt;b&gt;Security Layer&lt;/b&gt;&lt;br&gt;JwtAuthFilter · @PreAuthorize · SecurityExpressions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="175" width="560" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Security → Controllers -->
+        <mxCell id="6" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" source="5" target="7" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- CONTROLLERS -->
+        <mxCell id="7" value="&lt;b&gt;Controller Layer&lt;/b&gt;&lt;br&gt;Auth · Project · Chat · Members · Billing · Usage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="295" width="560" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Controllers → Services -->
+        <mxCell id="8" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" source="7" target="9" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- SERVICES -->
+        <mxCell id="9" value="&lt;b&gt;Service Layer&lt;/b&gt;&lt;br&gt;Auth · Project · Chat · Member · Usage · Subscription" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="415" width="360" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Services → AI -->
+        <mxCell id="10" value="AI chat" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=11;" edge="1" source="9" target="11" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- SPRING AI -->
+        <mxCell id="11" value="&lt;b&gt;Spring AI 1.0&lt;/b&gt;&lt;br&gt;ChatClient · Advisors · Tools" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="460" y="415" width="180" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Services → PostgreSQL -->
+        <mxCell id="12" value="JPA" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=11;" edge="1" source="9" target="13" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- POSTGRESQL -->
+        <mxCell id="13" value="&lt;b&gt;PostgreSQL :9010&lt;/b&gt;&lt;br&gt;pgvector-test · Hibernate" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="545" width="200" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- Services → MinIO -->
+        <mxCell id="14" value="S3 API" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=11;" edge="1" source="9" target="15" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- MINIO -->
+        <mxCell id="15" value="&lt;b&gt;MinIO :9000&lt;/b&gt;&lt;br&gt;starter-projects · projects" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="300" y="545" width="200" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- AI → OpenRouter -->
+        <mxCell id="16" value="HTTP" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=11;" edge="1" source="11" target="17" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- OPENROUTER -->
+        <mxCell id="17" value="&lt;b&gt;OpenRouter API&lt;/b&gt;&lt;br&gt;→ Gemini Flash" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="460" y="545" width="180" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="18" value="Gray = External  |  Orange = Security  |  Blue = HTTP  |  Green = Business Logic  |  Yellow = Data  |  Purple = AI" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="630" width="560" height="25" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
